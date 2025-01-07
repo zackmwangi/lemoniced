@@ -172,7 +172,7 @@ where the host is RabbitMQ hostname, vhost is RabbitMQ vhost and name is name of
 It should use **RABBITMQ_HOST , RABBITMQ_USER, and RABBITMQ_PASSWORD** environment variables to run multiple deployments of this and just change the env in them.
 
 ##### Ans:
-
+> Solution in question_7 folder [>> click here to go to solution folder <<](./question_7/README.md)
 
 
 #### Q8: Write a script to restart the Laravel backend service if CPU usage exceeds 80%
@@ -241,7 +241,25 @@ The main goal her is identifying bottlenecks while ensuring secure, low-latency 
 ## Section 4: Behavioral
 #### Q13: Describe a time you improved the performance of an infrastructure system. What challenges did you face?
 ##### Ans:
+I once was challenged by increased latency on showing a list of a users messages on a high-volume messaging platform.
+Challenges faced:
+> High latency during peak conversation times.
+
+Solution implemented:
+> utilized a Redis- cache to ensure user data was only fetched upon login and reused within consequent requests for upto 30 minutes
+
+Results
+> Reduced database response time from 3s to <200ms for the same queries during peak times
+
 
 #### Q14: How do you prioritize tasks when multiple urgent issues arise?
 ##### Ans:
+
+- > **Weigh the impact and severity** - I try to determine which issue has the most significant business impact,such as it affects the most users, has biggest impact on revenues, etc.
+- > **Evaluate urgency** - I try to determine which issues need immediate attention to prevent further harmful impact
+- > **Estimate resolution time** - sometimes i will prioritize issues that can be resolved quickly to allow faster progress
+- > **Engage stakeholders** - this is basically communicating with relevant parties to ensure we are solving the right problems and that the customer experience is maintained throughout the resolution process.
+- > **Delegation where possible** - I would assign some tasks to appropriate team members based on theire experience and the workload
+- > **Focus on root causes** - ensuring that I go beyond the systems to avoid recurring issues
+- > **Consider long-term inpact** - Its also crucial to ensure strategic alignment by not ignoring seemingly trivial issues which accumulate technical debt and have adverse consequences in the longer term.
 
