@@ -9,32 +9,32 @@
 #### Q1: What are the key security concerns when it comes to DevOps?
 > ##### Ans:
 > DevOps as a philosophy aims to improve the delivery cycle of software products through integration and automation 
-of software development and delivery workflows. This also inevitably comes with several concerns including:
+of software development and delivery workflows. It is an important part of modern product development culture but inevitably comes with several security concerns including:
 
 **Secrets management** - Secrets include passwords,keys and other sensitive credentials that should always remain controlled to prevent leakage and systems compromise.
 ###### Considerations:
-- Use of vault services(Hashicorp Vault as an example) to reduce exposure of secrets as part of normal code
-- Separation of concerns by ensuring software that consumes secrets is not bundled together with secrets themselves
+- Use of vault services(Hashicorp Vault as an example) to reduce exposure of secrets when bundled with application code.
+- Separation of concerns by ensuring software that consumes secrets is not bundled together with secrets themselves.
 - Dynamic secret generation and rotation -  to ensure secrets are not perpetually reused especially in sensitive environments such as the Lemonade infrastructure.
 
 **Infrastructure-as-code validation** - DevOps attempts to define the entire infrastructure as code and this means any vulnerabilities can lead to the compromise of entire systems.
 ###### Considerations:
-- Usage of scanning tools such as(Such as Terrascan) to mitigate release of code with known vulnerabilities.
-- Regular security audits of templates (which should also be standardized where possible) would also be necessary.
+- Usage of scanning tools (such as Terrascan) to mitigate release of code with known vulnerabilities.
+- Regular security audits of infrastructure templates, which should also be standardized where possible.
 
 **Supply chain attacks** - The concern here arises from third party libraries and other dependencies that are usually imported into build processes.
 ###### Considerations: 
-- Software composition analysis and scans to identify and remediate against known vulnerabilities.
+- Software composition analysis and scanning codebases to identify and remediate against known vulnerabilities in imported dependencies.
 - Enforce the usase of well tested and validated third-party libraries throughout the development process and moreso in production environments.
 
 **Insecure code release** - increased velocity and frequency of release means that untested software can get to production much faster.
 ###### Considerations: 
-- Secure coding practices including code review need to be part of the development culture.
-- Code review, automated (and manual) testing and analysis throughout the development and release cycle.
+- Secure coding practices, including code review need to be part of the development culture.
+- Automated (and manual) testing and analysis throughout the development and release cycle.
 
 **Compliance risks** - Meeting and adhering to regulatory frameworks can result in significant penalties especially in heavily regulated environments and industries such as Fintech.
 ###### Considerations: 
-- Implementation where possible of automated compliance checks in the CI/CD workflows to catch potential policy violations early.
+- Implementation of automated compliance checks in the CI/CD workflows to catch potential policy violations early.
 
 **Identity and access management** - Proper access control to infrastructure repositories is important to prevent unauthorized actions on systems.
 ###### Considerations:
@@ -43,8 +43,8 @@ of software development and delivery workflows. This also inevitably comes with 
 
 **Container security** - This is related to supply chain attack but am highling it in light of increased packaging of software as containers, such as with Docker and Kubernetes.
 ###### Considerations:
-- Restricted access to container image repositories whether sel-hosted or on a cloud provider repo.
-- Regular update of base images which should also be minimal to reduce attack footprint.
+- Restricted access to container image repositories whether self-hosted or on cloud provider container registries.
+- Regular update of base images used in build processes, which should also be minified to reduce attack footprint.
 - Regular scanning of base images to mitigate know vulnerabilities and improve runtime software security.
  
 #### Q2: How do you design a self-healing distributed service?
