@@ -105,6 +105,30 @@ Implementation of centralized logging for micro-services would involve:
 
 #### Q4: What are some of the reasons for choosing Terraform for DevOps?
 ##### Ans:
+> Terraform from Hashicorp is an Infra-as-code tool that allows users to safely and efficiently provision and manage cloud(and on-premise) infrastructure components from specification/development to modification and version control. 
+
+My top reasons to use Terraform include:
+
+- **Infrastructure as Code** + Version control capability
+> - The ability to define entire infrastructure as code is important for any non-trivial system
+Treating the infrastructure definition as code also enables easy version control using tools such as Git, and this enables easy tracking of changes and team collaboration.
+
+- **State management**
+> - Terraform makes it easy to define and establish the desired state of given infrastructure components. This ensures that there is consistency across development environments and recovery/restoration from failure states is easier.
+
+- **Multi-cloud support**
+> - Terraform makes it easy for DevOps engineers to use the same tool and knowledge across different cloud providers seamlessly, saving time and reducing the learning curve to productivity.
+
+- **Human readable configuration** structure + Declarative syntax
+> - The declarative syntax makes it easy for human operators to understand infrastructure manifests easily and hence reduce chances of human errors. 
+
+- **Reusable modules** + Community
+> - Reusability of modules makes it easy to share and collaborate across teams
+A wide community of Terraform users also exists where solutions to known problems can be sourced from the community.
+
+
+
+
 
 #### Q5: How would you design and implement a secure CI/CD architecture for microservice deployment using GitOps? Take a scenario of 20 microservices developed using different languages and deploying to an orchestrated environment like Kubernetes. (You can add a low-level architectural diagram)
 ##### Ans:
