@@ -85,6 +85,23 @@ Additionally I would implement circuit-breaker logic to guard against cascading 
 
 #### Q3: Describe a centralized logging solution and *how* you can implement logging for a microservice architecture
 ##### Ans:
+>At a high level, the centralized logging solution entails individual micro-services sending logs to a central collector, which would then forward them to a bulk-storage solution and also expose them through a visualization tool. Some processing may also be done by the collector/aggregator logic to ensure standardized log structures and formats for search and analysis.
+
+Implementation of centralized logging for micro-services would involve:
+ 
+ - **Collection of logs** from individual hosts, containers and services using a client such as Fluentd
+ - **Establish a Logging format/structure** - Establishing a consistent format to ensure consistent parsing, correlation and analysis.
+ - **Aggregation** of the logs onto a central collector, backed by a storage solution
+ - **Log processing/analysis** by extracting features from the logs. Optionally a streaming service such as Kafka/Redpanda may be implemented for real-time processing.
+ - **Indexing and enrichment** for easier searching and correlation is important to enable quick tracing or root causes of failure across service boundaries.
+ - **Visualization tooling** such as Kibana would also be attached to provide quick insight into logs during troubleshooting. 
+ - **Alerting thresholds** and rules are also necessary here to ensure error states are spotted, reported and investigated as soon as they are triggered to minimize downtime and negative impact on service availability.
+ - **Storage/rotation and retention policies** - management of log data and retention for stipulated durations is important for performance and compliance. A tiered storage solution would be ideal to balance cost and quick accessibility. Older copies may be stored in cheaper but slower volumes while faster and highly accessible/real-time solutions are used for newer log files that are highly likely to be required in case of failure.
+
+ Specific tooling used for the collection, aggregation, search, alerting and visualization may vary, form the older Elasticsearch, Logstash, Kibana(ELK) stack, to newer and improved tools and cloud-native solutions.
+
+ Other considerations include ensuring secure access to logs to prevent tampering especially in cases of systems compromise and criminal incidences. Some food for thought arises here if we also consider build-vs-buy in comparison to cloud-native options such as Amazon CloudWatch, GCP Cloud logging, etc in cases where the infrastructure is built on such providers.
+
 
 #### Q4: What are some of the reasons for choosing Terraform for DevOps?
 ##### Ans:
