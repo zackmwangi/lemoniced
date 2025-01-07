@@ -8,4 +8,4 @@
 ### Section 2: Coding Challenge
 #### Q10: Write a Dockerfile to containerize a Laravel application.
 > ##### Ans:
-> Dockerfile in this same folder [>> click here to open Dockerfile <<](./Dockerfile)
+> Dockerfile in this same folder [>> click here to open Dockerfile <<](./Dockerfile) File is verified to be working.
