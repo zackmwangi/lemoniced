@@ -5,7 +5,7 @@
 
 ---
 
-### Section 1: General Technical knowledge
+## Section 1: General Technical knowledge
 #### Q1: What are the key security concerns when it comes to DevOps?
 > ##### Ans:
 > DevOps as a philosophy aims to improve the delivery cycle of software products through integration and automation 
@@ -64,7 +64,7 @@ of software development and delivery workflows. It is an important part of moder
 
 ---
 
-### Section 2: Coding Challenge
+## Section 2: Coding Challenge
 #### Q7: Write Prometheus exporter in Python/Golang that connects to specified RabbitMQ HTTP API (it's in the management plugin) and periodically reads the following information about all queues in all vhosts:
 
 > * messages (total count of messages)
@@ -94,7 +94,7 @@ It should use **RABBITMQ_HOST , RABBITMQ_USER, and RABBITMQ_PASSWORD** environme
 
 ---
 
-### Section 3: Monitoring and Troubleshooting
+## Section 3: Monitoring and Troubleshooting
 #### Q11: How would you set up monitoring for the React Native mobile app’s API endpoints?
 ##### Ans:
 
@@ -103,7 +103,7 @@ It should use **RABBITMQ_HOST , RABBITMQ_USER, and RABBITMQ_PASSWORD** environme
 
 ---
 
-### Section 4: Behavioral
+## Section 4: Behavioral
 #### Q13: Describe a time you improved the performance of an infrastructure system. What challenges did you face?
 ##### Ans:
 
