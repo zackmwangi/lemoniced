@@ -215,6 +215,14 @@ Additionally I would consider re-designing the data schema towards a No-SQL/Wide
 ## Section 3: Monitoring and Troubleshooting
 #### Q11: How would you set up monitoring for the React Native mobile app’s API endpoints?
 ##### Ans:
+> The goal here is to ensure that we are ensuring aceptable levels of availability, perceived latency and security from the perspective of our users.We can approach it in many ways including:
+- >**Implement real-time error alerts** - on important service level thresholds such as request latency, error codes, etc
+- >**Use performance monitoring tools** - such as NewRelic to offer insights on response times, error rates, etc
+- >**Log analysis for unusual patterns** - to ensure we catch errors,potentially train AI models to recognize unusual patterns.
+- >**Implement distributed tracing** - use opnTelemetry and tools like Jaeger to view traces and spans and increase request observability.
+- >**Collect and analyze mobile app crash reports** - Using crash-reporting tools to ensure we catch errors on the client side which may be triggered by errors on the APIs
+- >**Real user monitoring and adequate QA** - Setting up real-life user walkthroughs to ensure the actual perceived quality of service is acceptable
+
 
 #### Q12: Explain how you would debug high latency in the Node.js microservices.
 ##### Ans:
@@ -223,7 +231,7 @@ The main goal her is identifying bottlenecks while ensuring secure, low-latency 
 - >**Check Database queries** - to ensure database queries are not the source of the latency. Joins and complex queries are the first suspects if the request invokes such.
 - >**Analyze internal/external service dependencies** - inter-service delays are a potential source of latency due to network-level delaysespecially on calling third-party APIs.
 - >**Inspect the event loop** - Check if our code is invoking unforeseen events which could result in thread-pool exhaustion and degraded performance
-- >**Inspect middleware and third-party libraries** - to ensure we are using up-to-date versions that are performant enough
+- >**Inspect middleware and third-party libraries** - to ensure we are using up-to-date versions of third-party libraries that are performant enough. Middleware should also perform minimal operations to avoid introducing per-request latency.s
 - >**Use a caching layer** - such as Redis to reduce latency on data potentially fetched on every request without changing
 - >**Monitor and log the infra** - to identify potential resource constraints
 
