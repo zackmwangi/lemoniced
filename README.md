@@ -218,6 +218,15 @@ Additionally I would consider re-designing the data schema towards a No-SQL/Wide
 
 #### Q12: Explain how you would debug high latency in the Node.js microservices.
 ##### Ans:
+The main goal her is identifying bottlenecks while ensuring secure, low-latency operations.
+- >**Profile the application backend** - to identify where latency is occuring. Is it the databse layer, third-party API calls, specific handshakes with other internal services, etc
+- >**Check Database queries** - to ensure database queries are not the source of the latency. Joins and complex queries are the first suspects if the request invokes such.
+- >**Analyze internal/external service dependencies** - inter-service delays are a potential source of latency due to network-level delaysespecially on calling third-party APIs.
+- >**Inspect the event loop** - Check if our code is invoking unforeseen events which could result in thread-pool exhaustion and degraded performance
+- >**Inspect middleware and third-party libraries** - to ensure we are using up-to-date versions that are performant enough
+- >**Use a caching layer** - such as Redis to reduce latency on data potentially fetched on every request without changing
+- >**Monitor and log the infra** - to identify potential resource constraints
+
 
 ---
 
