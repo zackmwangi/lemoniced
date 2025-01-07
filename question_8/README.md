@@ -8,9 +8,8 @@
 ### Section 2: Coding Challenge
 #### Q8: Write a script to restart the Laravel backend service if CPU usage exceeds 80%.
 > ##### Ans:
-> Script file(bash) in this same folder [>> click here to view file <<](./restart_laravel.sh)
-> Uses a while loop to continuously monitor CPU usage and restart the Laravel service if the usage exceeds 80%.
-> Checks every minute.
+> Script file(bash) in this same folder [>> click here to view file <<](./restart_laravel.sh). 
+Uses a while loop to continuously monitor CPU usage and restart the Laravel service if the usage exceeds 80%. Checks every minute.
 
 > Remember to make the script executable (chmod +x ./restart_laravel.sh)
 
