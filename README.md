@@ -172,7 +172,9 @@ where the host is RabbitMQ hostname, vhost is RabbitMQ vhost and name is name of
 It should use **RABBITMQ_HOST , RABBITMQ_USER, and RABBITMQ_PASSWORD** environment variables to run multiple deployments of this and just change the env in them.
 
 ##### Ans:
-> Solution in question_7 folder [>> click here to go to solution folder <<](./question_7/README.md)
+> Solution in question_7 folder [>> click here to go to solution folder <<](https://github.com/zackmwangi/lemoniced_go_rabbit)
+
+SEE https://github.com/zackmwangi/lemoniced_go_rabbit
 
 
 #### Q8: Write a script to restart the Laravel backend service if CPU usage exceeds 80%
