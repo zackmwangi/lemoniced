@@ -126,15 +126,33 @@ Treating the infrastructure definition as code also enables easy version control
 > - Reusability of modules makes it easy to share and collaborate across teams
 A wide community of Terraform users also exists where solutions to known problems can be sourced from the community.
 
-
-
-
-
 #### Q5: How would you design and implement a secure CI/CD architecture for microservice deployment using GitOps? Take a scenario of 20 microservices developed using different languages and deploying to an orchestrated environment like Kubernetes. (You can add a low-level architectural diagram)
 ##### Ans:
+> Security in Micro-Service architecture using GitOps on K8s with the services in different languages:
+- ****
+- ****
+- ****
+- ****
 
 #### Q6: You notice React Native builds are failing intermittently. What’s your debugging process?
 ##### Ans:
+
+
+- **Review build logs** for error patterns
+> - Log messages are the go-to first contact as they have a high likelihood to contain significant pointers to root causes.
+- **Check for resource constraints** (CPU, memory)
+> - Build process are usually resource intensive and we need to isolate the resource constraints as possible cause
+- **Verify dependencies** and their versions
+> - Third-party libraries are a common cause of build failures on frontends especially due to the high velocity of version releases and therefore high likelihood of conflicts.
+- **Test on different machines/environments**
+> - This isolates for differences in environmental factors such as architecture flags, paths,etc
+- **Implement retry logic for flaky steps**
+> - Retries may be used to get across highly flaky/intermittent steps, as may arise in cases of shared resources.
+- **Use profiling tools** to identify bottlenecks
+> - Such tools give reports and indicators of which steps use the most resources.
+- **Consider parallelizing** build processes
+> - Steps that do not have inter-dependencies and can be done in parallel should be parallelized to save on time and resources.s
+
 
 ---
 
@@ -154,6 +172,8 @@ where the host is RabbitMQ hostname, vhost is RabbitMQ vhost and name is name of
 It should use **RABBITMQ_HOST , RABBITMQ_USER, and RABBITMQ_PASSWORD** environment variables to run multiple deployments of this and just change the env in them.
 
 ##### Ans:
+
+
 
 #### Q8: Write a script to restart the Laravel backend service if CPU usage exceeds 80%
 ##### Ans:
