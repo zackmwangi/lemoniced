@@ -181,6 +181,30 @@ It should use **RABBITMQ_HOST , RABBITMQ_USER, and RABBITMQ_PASSWORD** environme
 
 #### Q9: A Postgres query is running slower than expected. Explain your approach to troubleshooting it.
 ##### Ans:
+> The approach to troubleshooting a slow PostgreSQL query would entail looking for several different possible causes:
+
+- Enable query logging and analyze slow queries to show more information and indicators of query performance metrics.
+
+- Use EXPLAIN ANALYZE to understand query execution plan
+
+- Optimize JOIN operations and subqueries, one of the commonnest causes of slow queries
+
+- Analyze index usage and consider adding appropriate indexes or updating existing ones
+
+- Check table statistics and vacuum status
+
+- Consider partitioning of large tables and sharding out the data to reduce table scan time.
+
+- Monitor server resources (CPU, RAM, I/O)
+
+- Use pg_stat_statements extension for query performance analysis
+
+- Consider rewriting complex queries and reducing joins where possible.
+
+- Update PostgreSQL to the latest stable version, newer compatible versions usually have better performance.
+
+Additionally I would consider re-designing the data schema towards a No-SQL/Wide column and highly denormalized setup, especially where the query patterns are well-known, such as historical user transaction listings for Lemonade user accounts.
+
 
 #### Q10: Write a Dockerfile to containerize a Laravel application.
 ##### Ans:
