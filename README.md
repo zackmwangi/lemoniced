@@ -49,6 +49,39 @@ of software development and delivery workflows. It is an important part of moder
  
 #### Q2: How do you design a self-healing distributed service?
 ##### Ans:
+>A self-healing service is one which maintains a high level of availability and resilience against failure while gracefully recovering from 
+any failures with minimal deviation from the stipulated level of performance.
+
+A design towards achieving these goals would entail:
+
+**Implementing health checks** - A regular healthcheck on the service means that an observer system can detect issues and implement swift corrective measures such as restarts.
+###### Considerations:
+- Implement liveness and readiness probe endpoints in all deployed micro-services and use platform or orchestrator probes to continuously monitor service health.
+
+**Using replicated instances** - This ensures more than one instance of the service is available to respond to requests.
+###### Considerations:
+- Use of automated orchestration systems such as Kubernetes replica sets to ensure the minimum number of replicas is always running.
+- Each replica should be deployed in a different availability zone to further reduce chances of localized mass failure.
+
+**Load balancing** - Distributing traffic improves service availbility in case of hosting node failure.
+###### Considerations: 
+- Use of load-aware distribution policies in case of high traffic and unforeseen traffic spikes.
+- Design of stateless services that share distributed state to ensure smooth customer experience accross requests even in times of node failures.
+
+**Auto-scaling** - Dynamically increasing service capacity in times of high demand is recommended to reduce service degradation or failure.
+###### Considerations:
+- Use of orchestration tools that support both horizontal (and potentially vertical) auto-scaling of service instances.
+
+**Rolling updates and rollbacks** - These are aimed at ensuring high service availability amidst continuous integrations and constant update/redeployment.
+###### Considerations: 
+- Implement a deployment strategy such as canary-update for zero-downtime updates.
+- Implement a roll-back strategy, monitoring any new service releases for errors and restoring to the last-known healthy version quickly to reduce downtime.
+
+**Monitoring and logging** - Detecting issues early is important especially when services may appear to run normally but produce incorrect outputs.
+###### Considerations:
+- Monitoring and alerting for unusual patterns in logs to catch impending failures besides the usual known error states.
+
+Additionally I would implement circuit-breaker logic to guard against cascading failures, as well as retry mechanisms to restart/retry failing instances (with a back-off factor).
 
 #### Q3: Describe a centralized logging solution and *how* you can implement logging for a microservice architecture
 ##### Ans:
